@@ -1,0 +1,364 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green-200: hsl(148, 38%, 91%);
+    --green-600: hsl(169, 82%, 27%);
+    --red: hsl(0, 66%, 54%);
+
+    --white: hsl(0, 0%, 100%);
+    --grey-500: hsl(186, 15%, 59%);
+    --grey-900: hsl(187, 24%, 22%);
+
+    --font-family: 'Karla', sans-serif;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+    --font-size-labels: 16px;
+}
+
+.attribution { 
+    font-size: 10px; 
+    position: absolute;
+    left: 20px;
+    bottom: 0px;
+}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+
+/* Code */
+
+.sucess-container {
+    background-color: var(--grey-900);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 85%;
+    padding: 10px;
+    margin-left: 40px;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s linear;
+}
+
+.sucess-container.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.sucess-content {
+    display: flex;
+    gap: 10px;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.sucess-content h3 {
+    color: rgba(255, 255, 255, 0.919);
+}
+
+.sucess-container p {
+    color: var(--green-200);
+}
+
+body {
+    background-color: var(--green-200);  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    height: 100vh;
+    overflow: hidden;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 600px; 
+    background-color: white;  
+    padding: 20px;
+    border-radius: 8px;  
+}
+
+.form-container .heading {
+    color: var(--grey-900);
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: var(--font-weight-bold);
+}
+
+.form-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.form-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px;
+}
+
+.form-content h3, #message-label, .query-type {
+    color: var(--grey-900);
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: var(--font-weight-regular);
+}
+
+.query-type  {
+    margin-bottom: 20px;
+}
+
+.form-content input {
+    width: 100%;
+    max-width: 350px; 
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    height: 40px;
+    padding: 20px;
+    padding-right: 80px;
+    margin-top: 5px;
+    border: 1px solid var(--grey-500);
+    transition: all 0.3s ease;
+}
+
+.form-content input:hover,
+.form-email input:hover, 
+.message-content textarea:hover {
+    border-color: var(--green-600);
+}
+
+.form-content input:focus,
+.form-email input:focus, 
+.message-content textarea:focus {
+    border-color: var(--green-600);
+    box-shadow: 0 0 6px rgba(0, 128, 0, 0.2);
+    outline: none;
+}
+
+.form-email input {
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    height: 40px;
+    padding: 20px;
+    padding-right: 80px;
+    margin-top: 5px;
+    border: 1px solid var(--grey-500);
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.form-email .email {
+    margin-top: 20px;
+    color: var(--grey-900);
+    font-size: 16px;
+    font-weight: var(--font-weight-regular);
+}
+
+.support-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.support-content, 
+.support-request {
+    width: 100%;
+    border: 2px solid var(--grey-500);
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.support-content:hover, .support-request:hover {
+    background-color: var(--green-200);
+}
+
+/* Hide the native radio button */
+input[type="radio"] {
+    display: none;
+}
+
+/* Style for the custom radio button */
+.custom-radio {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 20px;
+    position: relative;
+}
+
+/* Custom radio icon */
+.custom-radio .radio-icon {
+    content: '';
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--green-600);
+    border-radius: 50%;
+    margin-right: 10px;
+    background: none;
+    position: relative;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Checked state - show custom icon */
+input[type="radio"]:checked + .radio-icon {
+    background: url(assets/images/icon-radio-selected.svg) center center no-repeat;
+    background-size: contain;
+}
+
+
+.message-container {
+    margin-top: 18px;
+}
+
+.message-content textarea {
+    width: 100%;
+    border-radius: 10px; 
+    margin-top: 10px;
+    padding: 10px; 
+    height: 110px; 
+    border: 2px solid var(--grey-500);
+    text-align: left;
+    resize: none; 
+    transition: border-color 0.3s ease;
+}
+
+.message-content textarea:focus {
+    border-color: var(--green-600);
+}
+
+.consent-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.submit-button button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: var(--green-600);
+    cursor: pointer;
+    color: var(--white);
+    font-size: 16px;
+    font-weight: var(--font-weight-regular);
+}
+
+/* Hide the native checkbox */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Style for the custom checkbox icon */
+.custom-checkbox {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Checkbox icon */
+.custom-checkbox .checkbox-icon {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--green-600);
+    border-radius: 4px;
+    margin-right: 10px;
+    background: none;
+    position: relative;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Checked state - show the custom icon */
+input[type="checkbox"]:checked + .checkbox-icon {
+    background: url(assets/images/icon-checkbox-check.svg) ;
+    background-size: contain;
+}
+
+.error-message {
+    color: red;
+    margin-top: 5px;
+    margin-bottom: 7px;
+}
+
+/* Media Query */
+
+@media screen and (max-width: 945px) {
+    body {
+        height: auto;
+        overflow: visible;
+    }
+    .attribution {
+        visibility: hidden;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    body {
+        height: auto;
+        overflow: visible;
+    }
+
+    .form-content {
+        grid-template-columns: 1fr; 
+        gap: 0px;
+    }
+
+    .form-content input,
+    .form-email input,
+    .message-content textarea {
+        width: 100%; 
+        margin-top: 10px;
+    }
+
+    .support-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .support-content,
+    .support-request {
+        width: 100%; 
+    }
+
+    .message-content textarea {
+        height: 120px; 
+        margin-bottom: 5px;
+    }
+
+    .submit-button button {
+        width: 100%;
+        padding: 12px;
+    }
+    .attribution {
+        visibility: hidden;
+    }
+}
+
+

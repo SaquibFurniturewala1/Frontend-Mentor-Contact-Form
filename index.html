@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="main.css">
+
+  <title>Frontend Mentor | Contact form</title>
+</head>
+
+<body>
+
+  <header>
+    <div id="success-message-container"></div>
+
+    <div class="form-container" id="form-container">
+      <form action="#">
+        <section id="one">
+          <h2 class="heading">Contact Us</h2>
+          <div class="form-content">
+            <label for="first-name">
+              <h3>First Name *</h3>
+              <input type="text" name="first-name" id="first-name">
+            </label>
+            <label for="last-name">
+              <h3>Last Name *</h3>
+              <input type="text" name="last-name" id="last-name">
+            </label>
+          </div>
+          <div class="form-email">
+            <label for="email">
+              <h3 class="email">Email Address *</h3>
+              <input type="email" name="email" id="email">
+            </label>
+          </div>
+        </section>
+
+        <section id="two">
+          <h2 class="query-type">Query Type *</h2>
+          <div class="support-container">
+            <div class="support-content">
+              <label for="general" class="custom-radio">
+                <input type="radio" name="query-type" id="general">
+                <span class="radio-icon"></span>
+                <span>General Enquiry</span>
+              </label>
+            </div>
+            <div class="support-request">
+              <label for="support" class="custom-radio">
+                <input type="radio" name="query-type" id="support">
+                <span class="radio-icon"></span>
+                <span>Support Request</span>
+              </label>
+            </div>
+          </div>
+          <p id="query-error-message"></p>
+        </section>
+
+        <section id="three">
+          <div class="message-container">
+            <h3 id="message-label">Message *</h3>
+            <div class="message-content">
+              <label for="message">
+                <textarea name="message" id="message"></textarea>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section id="four-consent">
+          <div class="consent-container">
+            <label for="consent" class="custom-checkbox">
+              <input type="checkbox" name="consent" id="consent">
+              <span class="checkbox-icon"></span>
+              <span id="consent-label">I consent to being contacted by the team</span>
+            </label>
+          </div>
+          <p id="consent-error-message"></p>
+        </section>
+        
+        <section id="four-submit">
+          <div class="submit-button">
+            <button type="submit" id="submit">Submit</button>
+          </div>
+        </section>
+      </form>
+    </div>
+
+
+  </header>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="#">Saquib Furniturewala</a>.
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+
+</html>
